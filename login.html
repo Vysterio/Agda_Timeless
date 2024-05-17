@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css"> <!-- You may want to link to your CSS file for styling -->
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 300px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+p {
+    text-align: center;
+    margin-top: 10px;
+    color: #777;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-form">
+            <form action="index.html" method="GET">
+            <h1>Login</h1>
+            <p>
+              Already have an account? Login in or
+              <a href="">Sign Up</a>
+            </p>
+  
+            <label for="email">Email</label>
+            <input type="text" placeholder="Enter Email" name="email" required />
+  
+            <label for="psw">Password</label>
+            <input
+              type="password"
+              placeholder="Enter Password"
+              name="psw"
+              required
+            />
+  
+            <label for="psw-repeat">Repeat Password</label>
+            <input
+              type="password"
+              placeholder="Repeat Password"
+              name="psw-repeat"
+              required
+            />
+  
+            <label>
+              <input
+                type="checkbox"
+                checked="checked"
+                name="remember"
+                style="margin-bottom: 15px"
+              />
+              Remember me
+            </label>
+  
+            <p>
+              By creating an account you agree to our
+              <a href="#">Terms & Privacy</a>.
+            </p>
+  
+            <div class="buttons">
+              <button type="button" class="cancelbtn">Cancel</button>
+              <button type="submit" class="signupbtn">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+  
+    <script>
+        function loginSuccess() {
+            alert("Login successful!");
+            window.location.href ="index.html"; // Redirect to index.html
+        }
+    </script>
+</body>
+</html>

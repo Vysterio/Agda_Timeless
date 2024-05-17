@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Processing</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Reset some default styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Container for the payment form */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+label {
+    font-weight: bold;
+}
+
+/* Button styles */
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Message box for displaying confirmation messages */
+.message-box {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: none;
+}
+
+/* Styles for success message */
+.message-box.success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+/* Styles for error message */
+.message-box.error {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+/* Styles for email confirmation */
+.email-confirmation {
+    margin-top: 20px;
+    font-style: italic;
+    color: #333;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Payment Processing</h1>
+        <p>Please select your payment method:</p>
+        <div class="payment-methods">
+            <label for="visa">
+                <input type="radio" id="visa" name="payment-method" value="visa">
+                <img src="img\pay\visa.png" alt="Visa">
+            </label>
+            <label for="mastercard">
+                <input type="radio" id="mastercard" name="payment-method" value="mastercard">
+                <img src="img\pay\mastercard.jpg" alt="Mastercard">
+            </label>
+            <label for="gcash">
+                <input type="radio" id="gcash" name="payment-method" value="gcash">
+                <img src="img\pay\gcash.png" alt="gcash">
+            </label>
+            <label for="amex">
+                <input type="radio" id="alipay" name="payment-method" value="alipay">
+                <img src="img\pay\alipay.png" alt="alipay">
+            </label>
+        </div>
+        <p>Please enter your payment details:</p>
+        <form id="payment-form">
+            <label for="card-number">Card Number:</label>
+            <input type="text" id="card-number" required>
+            
+            <label for="expiry-date">Expiry Date:</label>
+            <input type="text" id="expiry-date" required>
+            
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" required>
+            
+            <button type="submit">Process Payment</button>
+        </form>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const paymentForm = document.getElementById("payment-form");
+
+    if (paymentForm) {
+        paymentForm.addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Simulate a payment processing delay (you would replace this with your actual payment processing logic)
+            setTimeout(() => {
+                // Redirect to the confirmation page
+                window.location.href = "confirmation.html";
+            }, 2000); // Delay of 2 seconds (2000 milliseconds)
+        });
+    }
+});
+    </script>
+</body>
+</html>

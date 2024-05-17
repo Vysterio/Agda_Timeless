@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Timeless</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./img/weblogo.png" type="image/x-icon">
+    <style>
+        /* Reset default browser styles */
+body, h1, h2, h3, h4, h5, h6, p, ul, li, form, input, textarea, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set body font and background */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+/* Header section styles */
+#header {
+    background-color: #000000;
+    color: #fff;
+    padding: 20px;
+}
+
+.logo {
+    height: 50px;
+}
+
+#navbar {
+    list-style-type: none;
+}
+
+#navbar li {
+    display: inline;
+    margin-right: 20px;
+}
+
+#navbar li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.active {
+    color: yellow;
+}
+
+/* Contact section styles */
+#contact {
+    padding: 50px;
+    text-align: center;
+}
+
+.contact-info {
+    margin-bottom: 50px;
+}
+
+.contact-info h2 {
+    margin-bottom: 20px;
+}
+
+.contact-info ul {
+    list-style-type: none;
+}
+
+.contact-info ul li {
+    margin-bottom: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
+
+    </style>
+</head>
+
+<body>
+    <section id="header">
+        <a href="#"><img src="./img/products/logo.png" class="logo" alt=""></a>
+    
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a class="active" href="contact.html">Contact</a></li>
+                <li><a href="cart.html"><i class="fas fa-shopping-bag"></i></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact" class="section-p1">
+        <div class="contact-info">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or inquiries, feel free to reach out to us using the contact information below:</p>
+            <ul>
+                <li><strong>Address:</strong> Blk 26 Lot 10 Quezon City, Novaliches</li>
+                <li><strong>Phone:</strong> 09691787592</li>
+                <li><strong>Hours:</strong> 9:00AM-10:00PM, Mon - Friday</li>
+            </ul>
+        </div>
+        <div class="contact-form">
+            <h3>Send us a message</h3>
+            <form action="#" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+      
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

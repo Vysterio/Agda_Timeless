@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+}
+
+#header {
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+}
+
+#navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+#navbar li {
+    float: left;
+}
+
+#navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#navbar li a:hover {
+    background-color: #111;
+}
+
+#cart {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#cart table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#cart table, #cart th, #cart td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#cart th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+#checkout-form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+#checkout-form label {
+    display: block;
+    margin-top: 20px;
+}
+
+#checkout-form input[type="text"], #checkout-form input[type="tel"], #checkout-form textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+#checkout-form button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+#checkout-form button[type="submit"]:hover {
+    opacity: 0.8;
+}
+
+#cart table tbody tr td img {
+    width: 80px; /* Adjust the width to your desired size */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 4px;
+}
+
+    </style>
+</head>
+<body>
+    <section id="header">
+        <a href="#"><img src="img/logo.png" class="logo" alt=""></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html"><i class="fas fa-shopping-bag"></i></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="cart" class="section-p1">
+        <form id="cart-form" action="/update-cart" method="post"></form>
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="img/products/f1.jpg" alt=""></td>
+                    <td>Tissot T-My Lady Automatic</td>
+                    <td>₱90,373.00</td>
+                    <td><input type="number" value="1" min="1"></td>
+                    <td>₱4,492</td>
+                    <td><i class="fas fa-trash-alt"></i></td>
+                </tr>
+                <tr>
+                    <td><img src="img/products/f2.jpg" alt=""></td>
+                    <td>Cartoon Astronaut T-shirts</td>
+                    <td>₱4,492</td>
+                    <td><input type="number" value="1" min="1"></td>
+                    <td>₱4,492</td>
+                    <td><i class="fas fa-trash-alt"></i></td>
+                </tr>
+                <tr>
+                    <td><img src="img/products/f3.jpg" alt=""></td>
+                    <td>Cartoon Astronaut T-shirts</td>
+                    <td>₱4,492</td>
+                    <td><input type="number" value="1" min="1"></td>
+                    <td>₱4,492</td>
+                    <td><i class="fas fa-trash-alt"></i></td>
+                </tr>
+                <tr>
+                    <td><img src="img/products/f4.jpg" alt=""></td>
+                    <td>Cartoon Astronaut T-shirts</td>
+                    <td>₱4,492</td>
+                    <td><input type="number" value="1" min="1"></td>
+                    <td>₱4,492</td>
+                    <td><i class="fas fa-trash-alt"></i></td>
+                </tr>
+                <tr>
+                    <td><img src="img/products/f5.jpg" alt=""></td>
+                    <td>Cartoon Astronaut T-shirts</td>
+                    <td>₱4,492</td>
+                    <td><input type="number" value="1" min="1"></td>
+                    <td>₱4,492</td>
+                    <td><i class="fas fa-trash-alt"></i></td>
+                </tr>
+                <tr>
+                    <td><img src="img/products/f6.jpg" alt=""></td>
+                    <td>Cartoon Astronaut T-shirts</td>
+                    <td>₱4,492</td>
+                    <td><input type="number" value="1" min="1"></td>
+                    <td>₱4,492</td>
+                    <td><i class="fas fa-trash-alt"></i></td>
+                </tr>
+                <tr>
+                    <td><img src="img/products/f7.jpg" alt=""></td>
+                    <td>Cartoon Astronaut T-shirts</td>
+                    <td>₱4,492</td>
+                    <td><input type="number" value="1" min="1"></td>
+                    <td>₱4,492</td>
+                    <td><i class="fas fa-trash-alt"></i></td>
+                </tr>
+                <tr>
+                    <td><img src="img/products/f8.jpg" alt=""></td>
+                    <td>Cartoon Astronaut T-shirts</td>
+                    <td>₱4,492</td>
+                    <td><input type="number" value="1" min="1"></td>
+                    <td>₱4,492</td>
+                    <td><i class="fas fa-trash-alt"></i></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="checkout-form" class="section-p1">
+        <form action="payment.html" method="post">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" required>
+            
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
+            
+            <label for="address">Address</label>
+            <textarea id="address" name="address" required></textarea>
+            
+            <label for="country">Country</label>
+            <input type="text" id="country" name="country" required>
+            
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" required>
+            
+            <label for="totalquantity">Total Quantity</label>
+            <input type="text" id="totalquantity" name="totalquantity" readonly>
+            
+            <label for="totalprice">Total Price</label>
+            <input type="text" id="totalprice" name="totalprice" readonly>
+            
+            <button type="submit">Checkout</button>
+        </form>
+    </section>
+
+    <script>
+        // Calculate the total quantity and total price based on the cart items
+        function updateCart() {
+            let rows = document.querySelectorAll("#cart tbody tr");
+            let totalQuantity = 0;
+            let totalPrice = 0;
+
+            rows.forEach(row => {
+                let price = parseFloat(row.cells[2].textContent.replace("₱", "").replace(",", ""));
+                let quantity = parseInt(row.cells[3].querySelector("input").value);
+                let subtotal = price * quantity;
+
+                totalQuantity += quantity;
+                totalPrice += subtotal;
+
+                row.cells[4].textContent = `₱${subtotal.toFixed(2)}`;
+            });
+
+            document.getElementById("totalquantity").value = totalQuantity;
+            document.getElementById("totalprice").value = `₱${totalPrice.toFixed(2)}`;
+        }
+
+        // Update the cart on page load
+        window.addEventListener("load", updateCart);
+
+        // Update the cart when the quantity of an item changes
+        document.getElementById("cart-form").addEventListener("input", updateCart);
+    </script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="shortcut icon" href="./img/products/" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="header">
+        <a href="#"><img src="./img/products/logo.png" class="logo" alt=""></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a class="active" href="cart.html"><i class="fas fa-shopping-bag"></i></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="cart" class="section-p1">
+        <form id="cart-form" action="/update-cart" method="post"></form>
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="img/products/f1.jpg" alt=""></td>
+                    <td>Tissot T-My Lady Automatic</td>
+                    <td>₱90,373.00</td>
+                    <td><input type="number" value="1" min="1"></td>
+                    <td>₱90,373</td>
+                    <td><i class="fas fa-trash-alt"></i></td>
+                </tr>
+                <tbody>
+                    <tr>
+                        <td><img src="img/products/f2.jpg" alt=""></td>
+                        <td>Tissot Heritage Visodate T118</td>
+                        <td>₱12,800</td>
+                        <td><input type="number" value="1" min="1"></td>
+                        <td>₱12,800</td>
+                        <td><i class="fas fa-trash-alt"></i></td>
+                    </tr>
+                    <tbody>
+                        <tr>
+                            <td><img src="img/products/f3.jpg" alt=""></td>
+                            <td>Tissot Heritage Visodate T118</td>
+                            <td>₱25,500</td>
+                            <td><input type="number" value="1" min="1"></td>
+                            <td>₱25,500</td>
+                            <td><i class="fas fa-trash-alt"></i></td>
+                        </tr>
+                        <tbody>
+                            <tr>
+                                <td><img src="img/products/f4.jpg" alt=""></td>
+                                <td>Tissot Heritage 1938 Automatic</td>
+                                <td>₱52,800</td>
+                                <td><input type="number" value="1" min="1"></td>
+                                <td>₱52,800</td>
+                                <td><i class="fas fa-trash-alt"></i></td>
+                            </tr>
+                            <tbody>
+                                <tr>
+                                    <td><img src="img/products/f5.jpg" alt=""></td>
+                                    <td>Tissot Everytime T109</td>
+                                    <td>₱15,700</td>
+                                    <td><input type="number" value="1" min="1"></td>
+                                    <td>₱15,700</td>
+                                    <td><i class="fas fa-trash-alt"></i></td>
+                                </tr>
+                                <tbody>
+                                    <tr>
+                                        <td><img src="img/products/f6.jpg" alt=""></td>
+                                        <td>Tissot PR 100 T150</td>
+                                        <td>₱19,300</td>
+                                        <td><input type="number" value="1" min="1"></td>
+                                        <td>₱19,300</td>
+                                        <td><i class="fas fa-trash-alt"></i></td>
+                                    </tr>
+                                    <tbody>
+                                        <tr>
+                                            <td><img src="img/products/f7.jpg" alt=""></td>
+                                            <td>Calvin Klein 25100012 Women's Two-Tone Steel Watch</td>
+                                            <td>₱11,400</td>
+                                            <td><input type="number" value="1" min="1"></td>
+                                            <td>₱11,400</td>
+                                            <td><i class="fas fa-trash-alt"></i></td>
+                                        </tr>
+                                        <tbody>
+                                            <tr>
+                                                <td><img src="img/products/f8.jpg" alt=""></td>
+                                                <td>Calvin Klein Women's Ionic Plated Light Gold Steel Watch</td>
+                                                <td>₱12,000</td>
+                                                <td><input type="number" value="1" min="1"></td>
+                                                <td>₱12,000</td>
+                                                <td><i class="fas fa-trash-alt"></i></td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </tbody>
+                                </tbody>
+                            </tbody>
+                        </tbody>
+                    </tbody>
+                </tbody>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="cart-actions" class="section-p1">
+        <button class="normal" onclick="updateCart()">Update Cart</button>
+        <button class="normal" onclick="window.location.href='checkout.html'">Proceed to Checkout</button>
+        <div>Total: <span id="total">₱0.00</span></div>
+    </section>
+    <script>
+        function updateCart() {
+            let rows = document.querySelectorAll("#cart tbody tr");
+
+            rows.forEach(row => {
+                let price = parseFloat(row.cells[2].textContent.replace("₱", "").replace(",", ""));
+                let quantity = parseInt(row.cells[3].querySelector("input").value);
+                let subtotal = price * quantity;
+                row.cells[4].textContent = `₱${subtotal.toFixed(2)}`;
+            });
+
+            let total = Array.from(rows).reduce((acc, row) => {
+                return acc + parseFloat(row.cells[4].textContent.replace("₱", "").replace(",", ""));
+            }, 0);
+
+            document.getElementById("total").textContent = `₱${total.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
